@@ -25,8 +25,9 @@ class TweetsController < ApplicationController
       else
         @tweet = Tweet.new(twitter_params)
         @tweet.user_id = current_user.id 
+        puts params.inspect
         @tweet.save
-        last_id = Tweet.maximum('id')
+        last_id = Tweet.maximum('retweetid')
         @role = User.where(:company_id => current_user.company_id, :role => "user")
         @role.each do |t|
           @tweet_user = TweetsUser.new

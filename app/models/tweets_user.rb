@@ -8,7 +8,7 @@ class TweetsUser < ApplicationRecord
   def post_twitter
 
   	
-  	user.twitter.retweet(811576370773921792)
+  	user.twitter.retweet(tweet_id)
 
   end
 end
